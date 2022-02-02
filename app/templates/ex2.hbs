@@ -1,9 +1,9 @@
 {{page-title "Ex2"}}
 {{outlet}}
 <ul>
-  {{#each @model.products as |product|}}
-    <li {{action "toggleActive" product}}>{{product.name}}</li>
-  {{/each}}
   <h2>{{plural @model.countActive 'Aucun service' 'service' 'services'}}</h2>
-  <h2>{{@model.sumActive}}</h2>
+  {{#each @model.products as |product|}}
+    <li {{action "toggleActive" product}}>{{product.name}} {{product.price}}€</li>
+  {{/each}}
+  <h2>Total: {{@model.sumActive}}</h2>
 </ul>
