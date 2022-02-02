@@ -14,7 +14,7 @@ export default class ProductServicesService extends Service {
   }
 
   get sumActive() {
-    let call = (total, product) => total + product;
-    return this.activeServices.reduc(call, 0);
+    let call = (total, product) => total + product.price;
+    return this.activeServices.reduce(call, 0);
   }
 }

@@ -3,4 +3,8 @@ import {service} from '@ember/service';
 
 export default class Ex2Route extends Route {
   @service productServices;
+
+  model() {
+    return this.productServices;
+  }
 }
