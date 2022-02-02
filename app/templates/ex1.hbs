@@ -1,0 +1,19 @@
+{{page-title "Ex1"}}
+<div class="card">
+  <div class="card-header">
+    <h3>Exo 1 : Note Application</h3>
+  </div>
+</div>
+<br/>
+<div>
+  <Textarea @value={{this.content}}/>
+  <br/>
+  <div {{action "enregistrer"}} class="btn btn-primary">Enregistrer</div>
+  <div {{action "effacer"}} class="btn btn-primary">Effacer</div>
+</div>
+<br/>
+<div class="alert alert-{{this.style}}">Nb de caractères restant : {{this.size}}</div>
+<br/>
+<div class="alert alert-{{this.style}}">{{this.modif}}</div>
+
+{{outlet}}
