@@ -10,4 +10,7 @@ Router.map(function () {
   this.route('ex1');
   this.route('testNew');
   this.route('testList');
+  this.route('contacts', function () {
+    this.route('update', {path: 'update/:contact_id'});
+  });
 });

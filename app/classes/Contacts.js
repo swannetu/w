@@ -1,4 +1,4 @@
-import {set} from '@ember/object';
+import { set } from '@ember/object';
 
 export default class Contacts {
   data;
