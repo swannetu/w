@@ -7,10 +7,9 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function () {
-  this.route('ex1');
-  this.route('testNew');
-  this.route('testList');
-  this.route('contacts', function () {
-    this.route('update', {path: 'update/:contact_id'});
+  // eslint-disable-next-line ember/no-capital-letters-in-routes
+  this.route('contact', function () {
+    this.route('add');
+    this.route('update', { path: 'update/:contact_id' });
   });
 });
