@@ -5,7 +5,10 @@ module.exports = function (environment) {
     modulePrefix: 'tds',
     environment,
     rootURL: '/',
-    locationType: 'auto',
+    locationType: 'history',
+    'ember-local-storage': {
+      includeEmberDataSupport: true,
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

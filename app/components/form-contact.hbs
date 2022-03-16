@@ -8,7 +8,7 @@
         <Input class="form-control" @value={{@contact.prenom}} placeholder="Prénom"/>
       </div>
       <div class="col">
-        <Input type="email" class="form-control" @value={{@contact.mail}} placeholder="Email"/>
+        <Input type="email" class="form-control" @value={{@contact.email}} placeholder="Email"/>
       </div>
       <div class="col">
         <button class="btn btn-success" type="button" {{on "click" (fn this.save @contact)}}>Valider</button>

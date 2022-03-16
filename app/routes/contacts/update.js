@@ -1,8 +1,8 @@
 import Route from '@ember/routing/route';
 import { service } from '@ember/service';
-import { action, set } from '@ember/object';
+import { action, set, copy } from '@ember/object';
 
-export default class ContactUpdateRoute extends Route {
+export default class ContactsUpdateRoute extends Route {
   @service store;
   @service router;
 
@@ -16,10 +16,12 @@ export default class ContactUpdateRoute extends Route {
   }
 
   @action save(copy) {
+    //Récupération model
     let contact = this.modelFor(this.routeName);
+    //Copie des membres de copy vers contact
     Object.assign(contact, copy);
     contact.save().then(() => {
-      this.router.transitionTo('contact');
+      this.router.transitionTo('contacts');
     });
   }
 
