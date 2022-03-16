@@ -13,4 +13,3 @@ export default class AddController extends Controller {
     });
   }
 }
-
