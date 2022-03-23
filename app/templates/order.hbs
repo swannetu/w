@@ -1,0 +1,8 @@
+{{page-title "Order"}}
+<ul>
+  {{#each @model as |employee|}}
+    <li>{{order.id}}</li>
+  {{/each}}
+</ul>
+{{order.dateCreation}} <span class="ui circular label">{{order.count}}</span>
+{{outlet}}
