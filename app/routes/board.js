@@ -1,5 +1,5 @@
 import Abstractroute from './AbstractRoute';
-import { action } from '@ember/object';
+import {action} from '@ember/object';
 import RSVP from 'rsvp';
 
 export default class BoardRoute extends Abstractroute {
@@ -8,7 +8,7 @@ export default class BoardRoute extends Abstractroute {
     if (user) {
       return RSVP.hash({
         orders: this.store.query('order', {
-          filter: { idEmployee: user.id },
+          filter: {idEmployee: user.id},
           include: 'orderdetails',
         }),
         employee: user,
@@ -16,8 +16,14 @@ export default class BoardRoute extends Abstractroute {
     }
   }
 
+  @action transition() {
+    this.router.transitionTo('board');
+  }
+
   @action logout() {
     this.userAuth.logout();
     this.refresh();
   }
+
+
 }

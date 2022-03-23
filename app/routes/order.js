@@ -1,15 +1,13 @@
-import Route from '@ember/routing/route';
-import RSVP from 'rsvp';
+import BoardRoute from './board';
+import {action} from '@ember/object';
 
-export default class OrderRoute extends Route {
-  model() {
-    let user = this.userAuth.user;
-    if (user) {
-      return RSVP.hash({
-        orders: this.store.findRecord('order', 1, {
-          include: 'user,orderdetails.product',
-        }),
-      });
-    }
+export default class OrderRoute extends BoardRoute {
+  @action transition() {
+    this.router.transitionTo('board');
+  }
+
+  @action logout() {
+    this.userAuth.logout();
+    this.refresh();
   }
 }
